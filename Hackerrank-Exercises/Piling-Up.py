@@ -1,14 +1,7 @@
-import math
-import os
-import random
-import sys
-
-
-
-s = input()
-
 from collections import Counter
 import re
+
+s = input()
 
 letters = re.findall(r'.', s)
 occur = Counter(sorted(letters))
