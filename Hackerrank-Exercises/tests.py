@@ -1,9 +1,2 @@
-i = 0
-cmd = input()
-while cmd == 'da':
-    i += 1
-    if i == 3:
-        break
-    cmd = input()
-else:
-    print(i)
+for i in range(1, 17):
+    print(f'(\d)(?!\{i}\{i}\{i})', end='')
