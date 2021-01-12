@@ -1,4 +1,3 @@
-
 PUSH = '1'
 DELETE = '2'
 PRINT_MAX = '3'
@@ -12,11 +11,11 @@ for _ in range(queries):
     query = input().split()
     if query[0] == PUSH:
         stack.append(int(query[1]))
-    elif query[0] == DELETE and stack:
+    elif stack and query[0] == DELETE:
         stack.pop()
-    elif query[0] == PRINT_MAX:
+    elif stack and query[0] == PRINT_MAX:
         print(max(stack))
-    elif query[0] == PRINT_MIN:
+    elif stack and query[0] == PRINT_MIN:
         print(min(stack))
 
 rev_stack = []
