@@ -3,11 +3,9 @@ from collections import deque
 stations = int(input())
 stations_data = {}
 
-for i in range(stations):
-    petrol_distance = list(map(int, input().split()))
-    stations_data[i] = petrol_distance
+petrol_distance = [list(map(int, input().split())) for _ in range(stations)]
 
-deque_stations = deque([v for k, v in stations_data.items()])
+deque_stations = deque(petrol_distance)
 succeeded_circle = []
 
 for i in range(stations):
