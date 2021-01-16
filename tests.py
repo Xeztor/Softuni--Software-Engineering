@@ -1,29 +1,9 @@
-from collections import deque
+a = '6,15-6,8'.split('-')
 
-food_quantity = int(input())
-order_queue = deque(map(int, input().split()))
 
-BIGGEST_ORDER = -1
+first = a[0]
+second = a[1]
 
-left_orders = ""
-for i in range(len(order_queue)):
-    current_order = order_queue.popleft()
-
-    if food_quantity - current_order >= 0:
-        food_quantity -= current_order
-        if current_order > BIGGEST_ORDER:
-            BIGGEST_ORDER = current_order
-
-    else:
-        order_queue.append(current_order)
-        break
-
-print(BIGGEST_ORDER)
-
-if len(order_queue) == 0:
-    print("Orders complete")
-
-else:
-    for i in range(len(order_queue)):
-        left_orders += str(order_queue[i]) + " "
-    print(f"Orders left: {left_orders}")
+for pair in a:
+    pair = list(map(int, pair.split(',')))
+    print(set(range(min(pair), max(pair))))
