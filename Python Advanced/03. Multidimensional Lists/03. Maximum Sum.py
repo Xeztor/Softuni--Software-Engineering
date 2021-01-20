@@ -1,18 +1,9 @@
-def read_matrix(is_test=False):
-    if is_test:
-        matrix = [
-            [1, 5, 5, 2, 4],
-            [2, 1, 4, 14, 3],
-            [3, 7, 11, 2, 8],
-            [4, 8, 12, 16, 4],
-
-        ]
-    else:
-        rows, cols = map(int, input().split())
-        matrix = []
-        for r in range(rows):
-            row = list(map(int, input().split()))
-            matrix.append(row)
+def read_matrix():
+    rows, cols = map(int, input().split())
+    matrix = []
+    for r in range(rows):
+        row = list(map(int, input().split()))
+        matrix.append(row)
 
     return matrix
 
@@ -50,6 +41,6 @@ def print_result(matrix, row_i, col_i, best_sum, SIZE):
 
 SIZE = 3
 
-matrix = read_matrix(is_test=False)
+matrix = read_matrix()
 (best_row_i, best_col_i, best_sum) = highest_valued_submatrix(matrix, SIZE)
 print_result(matrix, best_row_i, best_col_i, best_sum, SIZE)

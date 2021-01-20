@@ -1,17 +1,9 @@
-def read_matrix(is_test=False):
-    if is_test:
-        matrix = [
-            ['A', 'B', 'B', 'D'],
-            ['A', 'B', 'B', 'B'],
-            ['A', 'J', 'B', 'B'],
-
-        ]
-    else:
-        rows, cols = map(int, input().split())
-        matrix = []
-        for r in range(rows):
-            row = input().split()
-            matrix.append(row)
+def read_matrix():
+    rows, cols = map(int, input().split())
+    matrix = []
+    for r in range(rows):
+        row = input().split()
+        matrix.append(row)
 
     return matrix
 
@@ -33,7 +25,7 @@ def check_if_submatrix_is_square(matrix, row_i, col_i, size):
 
 SIZE = 2
 
-matrix = read_matrix(is_test=False)
+matrix = read_matrix()
 matrix_squares = 0
 
 for r in range(len(matrix) - SIZE + 1):
