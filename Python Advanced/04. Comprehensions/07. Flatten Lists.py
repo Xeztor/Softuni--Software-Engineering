@@ -3,11 +3,7 @@ lists = input().split('|')
 stack = []
 
 for l in lists:
-    ll = []
-    for i in l:
-        if i.isdigit():
-            ll.append(int(i))
-    stack.append(ll)
+    stack.append(l.split())
 
 flatten = []
 for _ in range(len(stack)):
