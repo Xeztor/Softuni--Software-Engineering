@@ -1,3 +1,3 @@
 def kwargs_length(**kwargs):
-    pass
+    return len(kwargs)
 
