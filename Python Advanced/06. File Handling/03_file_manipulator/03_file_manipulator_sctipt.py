@@ -1,5 +1,6 @@
 import os
 
+
 def create_file(file_name, content=None):
     if not content:
         with open(f'{file_name}', 'w'):
