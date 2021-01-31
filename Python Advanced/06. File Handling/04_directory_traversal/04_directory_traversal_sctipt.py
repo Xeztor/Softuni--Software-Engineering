@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def get_only_files(directory):
-    only_files = [f for f in listdir(f'{directory}') if isfile(join('.', f))]
+    only_files = [f for f in listdir(directory) if isfile(join(directory, f))]
     return only_files
 
 
