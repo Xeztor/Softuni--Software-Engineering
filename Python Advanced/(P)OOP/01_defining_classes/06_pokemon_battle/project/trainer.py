@@ -1,18 +1,9 @@
-class Pokemon:
-    def __init__(self, name, health):
-        self.name = name
-        self.health = health
-
-    def pokemon_details(self):
-        return f"{self.name} with health {self.health}"
-
-
 class Trainer:
     def __init__(self, name):
         self.name = name
         self.pokemon = []
 
-    def add_pokemon(self, pokemon: Pokemon):
+    def add_pokemon(self, pokemon):
         if pokemon in self.pokemon:
             return "This pokemon is already caught"
         else:
@@ -31,11 +22,14 @@ class Trainer:
     def trainer_data(self):
         pokemons_details = self.get_pokemons_details()
         return f"Pokemon Trainer {self.name}\n" \
-               f"Pokemon count {len(self.pokemon)}\n" + '\n'.join(pokemons_details)
+               f"Pokemon count {len(self.pokemon)}\n" + pokemons_details
 
     def get_pokemons_details(self):
-        return [f"- {pokemon_obj.pokemon_details()}" for pokemon_obj in self.pokemon]
+        pokemon_details = ''
+        for pokemon in self.pokemon:
+            pokemon_details += f"- {pokemon.pokemon_details()}\n"
 
+        return pokemon_details
 
 # pokemon = Pokemon("Pikachu", 90)
 # print(pokemon.pokemon_details())

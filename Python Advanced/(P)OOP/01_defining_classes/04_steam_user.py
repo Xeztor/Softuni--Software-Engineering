@@ -19,7 +19,7 @@ class SteamUser:
             return f"{game} is already in your library"
 
     def stats(self):
-        return f"{self.username} has {len(self.games)}. Total play time: {self.played_hours}"
+        return f"{self.username} has {len(self.games)} games. Total play time: {self.played_hours}"
 
 
 # user = SteamUser("Peter", ["Rainbow Six Siege", "CS:GO", "Fortnite"])
