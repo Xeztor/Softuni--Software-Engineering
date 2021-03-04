@@ -1,5 +1,5 @@
-from category import Category
-from topic import Topic
+from project.category import Category
+from project.topic import Topic
 
 
 class Document:
@@ -20,7 +20,7 @@ class Document:
         return cls(id, category_id, topic_id, file_name)
 
     def add_tag(self, tag_content: str):
-        if tag_content not in self.tags:
+        if tag_content in self.tags:
             return
 
         self.tags.append(tag_content)
