@@ -53,7 +53,7 @@ class MovieWorld:
         if dvd not in customer.rented_dvds:
             return f"{customer.name} does not have that DVD"
 
-        customer.rented_dvds.pop(dvd)
+        customer.rented_dvds.remove(dvd)
         dvd.is_rented = False
         return f"{customer.name} has successfully returned {dvd.name}"
 
