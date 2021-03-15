@@ -13,7 +13,7 @@ class TestGym(unittest.TestCase):
         Customer.id = 1
         c = Customer("Pesho", "addr.", "pesho@gmail.com")
         self.assertEqual(c.id, 1)
-        self.assertEqual(c.name, "Pesho")
+        self.assertEqual(c.username, "Pesho")
         self.assertEqual(c.address, "addr.")
         self.assertEqual(c.email, "pesho@gmail.com")
 
@@ -26,7 +26,7 @@ class TestGym(unittest.TestCase):
         Equipment.id = 1
         e = Equipment("Pesho")
         self.assertEqual(e.id, 1)
-        self.assertEqual(e.name, "Pesho")
+        self.assertEqual(e.username, "Pesho")
 
     def test_equipment_repr(self):
         Equipment.id = 1
@@ -37,7 +37,7 @@ class TestGym(unittest.TestCase):
         Trainer.id = 1
         t = Trainer("Pesho")
         self.assertEqual(t.id, 1)
-        self.assertEqual(t.name, "Pesho")
+        self.assertEqual(t.username, "Pesho")
 
     def test_trainer_repr(self):
         Trainer.id = 1

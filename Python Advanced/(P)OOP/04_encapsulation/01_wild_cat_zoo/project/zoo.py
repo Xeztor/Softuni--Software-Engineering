@@ -19,14 +19,14 @@ class Zoo:
 
         self.__budget -= price
         self.animals.append(animal)
-        return f"{animal.name} the {type(animal).__name__} added to the zoo"
+        return f"{animal.username} the {type(animal).__name__} added to the zoo"
 
     def hire_worker(self, worker):
         if not self.left_space_workers():
             return "Not enough space for worker"
 
         self.workers.append(worker)
-        return f"{worker.name} the {type(worker).__name__} hired successfully"
+        return f"{worker.username} the {type(worker).__name__} hired successfully"
 
     def fire_worker(self, worker_name):
         worker = self.worker_exist(worker_name)
@@ -95,5 +95,5 @@ class Zoo:
 
     def worker_exist(self, worker_name):
         for worker in self.workers:
-            if worker.name == worker_name:
+            if worker.username == worker_name:
                 return worker

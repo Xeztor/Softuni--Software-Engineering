@@ -10,13 +10,13 @@ class Album:
         elif self.published:
             return 'Cannot add songs. Album is published.'
         elif song.single:
-            return f"Cannot add {song.name}. It's a single"
+            return f"Cannot add {song.username}. It's a single"
         else:
             if not self.is_album_empty():
                 self.songs.append(song)
             else:
                 self.songs = [song]
-            return f"Song {song.name} has been added to the album {self.name}."
+            return f"Song {song.username} has been added to the album {self.name}."
 
     def remove_song(self, song_name):
         if self.published:
@@ -43,14 +43,14 @@ class Album:
 
     def get_song_by_name(self, song_name):
         for song in self.songs:
-            if song.name == song_name:
+            if song.username == song_name:
                 return song
 
     def get_song_names(self):
         if self.is_album_empty():
             return []
         else:
-            return [song.name for song in self.songs]
+            return [song.username for song in self.songs]
 
     def get_songs_details(self):
         songs_details = ''

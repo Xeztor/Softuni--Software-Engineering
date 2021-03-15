@@ -34,28 +34,28 @@ class MovieWorld:
         dvd = self.get_dvd_by_attr(id=dvd_id)
 
         if dvd in customer.rented_dvds:
-            return f"{customer.name} has already rented {dvd.name}"
+            return f"{customer.username} has already rented {dvd.username}"
 
         if dvd.is_rented:
             return "DVD is already rented"
 
         if customer.age < dvd.age_restriction:
-            return f"{customer.name} should be at least {dvd.age_restriction} to rent this movie"
+            return f"{customer.username} should be at least {dvd.age_restriction} to rent this movie"
 
         dvd.is_rented = True
         customer.rented_dvds.append(dvd)
-        return f"{customer.name} has successfully rented {dvd.name}"
+        return f"{customer.username} has successfully rented {dvd.username}"
 
     def return_dvd(self, customer_id, dvd_id):
         customer = self.get_customer_by_attr(id=customer_id)
         dvd = self.get_dvd_by_attr(id=dvd_id)
 
         if dvd not in customer.rented_dvds:
-            return f"{customer.name} does not have that DVD"
+            return f"{customer.username} does not have that DVD"
 
         customer.rented_dvds.remove(dvd)
         dvd.is_rented = False
-        return f"{customer.name} has successfully returned {dvd.name}"
+        return f"{customer.username} has successfully returned {dvd.username}"
 
     def get_customer_by_attr(self, id=None, name=None):
         if id:

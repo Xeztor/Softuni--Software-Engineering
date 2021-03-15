@@ -35,8 +35,8 @@ class Section:
 
     def get_task_by_name(self, task_name):
         for task in self.tasks:
-            if task.name == task_name:
+            if task.username == task_name:
                 return task
 
     def get_all_task_names(self):
-        return [task.name for task in self.tasks]
+        return [task.username for task in self.tasks]
