@@ -49,8 +49,8 @@ class Tiger(Mammal):
     def make_sound(self):
         return "ROAR!!!"
 
-    # def feed(self, food):
-    #     if not isinstance(food, Meat):
-    #         return f"{self.get_class_name()} does not eat {type(food).__name__}!"
-    # 
-    #     self.gain_weight(self.WEIGHT_GAIN, food)
+    def feed(self, food):
+        if not isinstance(food, Meat):
+            return f"{self.get_class_name()} does not eat {type(food).__name__}!"
+
+        self.gain_weight(self.WEIGHT_GAIN, food)

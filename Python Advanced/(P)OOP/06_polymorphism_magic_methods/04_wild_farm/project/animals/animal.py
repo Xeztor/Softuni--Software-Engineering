@@ -32,14 +32,6 @@ class Mammal(Animal):
     def get_class_name(cls):
         return cls.__name__
 
-    @abstractmethod
-    def make_sound(self):
-        pass
-
-    @abstractmethod
-    def feed(self, food):
-        pass
-
 
 class Bird(Animal):
     def __init__(self, name, weight, wing_size):
@@ -53,10 +45,3 @@ class Bird(Animal):
     def get_class_name(cls):
         return cls.__name__
 
-    @abstractmethod
-    def make_sound(self):
-        pass
-
-    @abstractmethod
-    def feed(self, food):
-        pass
