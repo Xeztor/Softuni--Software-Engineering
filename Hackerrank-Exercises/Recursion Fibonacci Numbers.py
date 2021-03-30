@@ -6,4 +6,4 @@ def fibonacci(n):
 
 
 # n = int(input())
-print(fibonacci(7))
+print(fibonacci(2))
