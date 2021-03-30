@@ -44,7 +44,7 @@ class Cat(Mammal):
 
 
 class Tiger(Mammal):
-    WEIGHT_GAIN = 1
+    WEIGHT_GAIN = 1.0
 
     def make_sound(self):
         return "ROAR!!!"
