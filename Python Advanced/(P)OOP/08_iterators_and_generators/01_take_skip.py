@@ -1,6 +1,6 @@
 class take_skip:
-    def __init__(self, skip, count):
-        self.skip = skip
+    def __init__(self, step, count):
+        self.step = step
         self.count = count
         self.i = 0
 
@@ -11,7 +11,7 @@ class take_skip:
         if self.i == self.count:
             raise StopIteration
 
-        res = self.i * self.skip
+        res = self.i * self.step
         self.i += 1
         return res
 
