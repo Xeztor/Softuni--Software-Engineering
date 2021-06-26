@@ -9,15 +9,20 @@
 <body>
 <h1>My Todo List</h1>
 {% if todos %}
+<a class="btn btn-primary" href="{% url 'create todo' %}">Create</a>
     <div class="container">
         {% for todo in todos %}
             <div class="todo">
                 <p>{{ todo.title }}</p>
                 <div class="description">{{ todo.description }}</div>
                 {% if todo.state is True %}
-                    <p style="color:green"><b>Done</b></p>
+                    <div class="done">
+                        <p>Done</p>
+                    </div>
                 {% else %}
-                    <p style="color:red"><b>Not Done</b></p>
+                    <div class="open">
+                        <p>Not Done</p>
+                    </div>
                 {% endif %}
                 <a class="btn btn-primary" href="{% url 'edit todo' todo.id %}">Edit</a>
                 <a class="btn btn-primary" href="{% url 'delete todo' todo.id %}">Delete</a>
@@ -28,11 +33,10 @@
                 {% endif %}
             </div>
         {% endfor %}
-        <a class="btn btn-primary" href="{% url 'create todo' %}">Create</a>
     </div>
 {% else %}
     <h2>No TODOs</h2>
-    <h2>Go to <a href="{% url 'create todo' %}">/createTodo</a> to create a new TODO</h2>
+    <h2>Go to <a href="{% url 'create todo' %}">create TODO</a> to create a new TODO</h2>
 {% endif %}
 </body>
 </html>

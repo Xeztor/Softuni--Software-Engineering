@@ -20,7 +20,7 @@ div.open {
 }
 
 div.todo {
-    display: block;
+    display: flex;
     background: white;
     border: 2px solid white;
     border-radius: 10px;
@@ -29,7 +29,7 @@ div.todo {
 }
 
 div.todo p {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     text-decoration: underline;
 }
