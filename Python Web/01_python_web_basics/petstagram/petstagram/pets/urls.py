@@ -11,5 +11,5 @@ urlpatterns = [
     path('create/', create_pet, name='create pet'),
     path('edit/<int:pk>', edit_pet, name='edit pet'),
     path('delete/<int:pk>', delete_pet, name='delete pet'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 

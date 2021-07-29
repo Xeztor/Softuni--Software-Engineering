@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from petstagram.common.forms import CommentForm
+from petstagram.common.models import Comment
 from petstagram.pets.forms import CreatePetForm, EditPetForm
 from petstagram.pets.models import Pet, Like
 
@@ -17,9 +19,12 @@ def pet_detail(request, pk):
     pet = Pet.objects.get(pk=pk)
     pet.likes = pet.like_set.count()
 
+    comments = Comment.objects.all()
     context = {
         'page_name': 'detail_page',
         'pet': pet,
+        'comment_form': CommentForm(),
+        'comments': comments,
     }
 
     return render(request, 'pet_detail.html', context)

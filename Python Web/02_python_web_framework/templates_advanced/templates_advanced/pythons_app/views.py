@@ -1,4 +1,6 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from .core.decorators import only_allow_groups
 from .forms import PythonCreateForm
 from .models import Python
 
@@ -11,13 +13,14 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+@login_required()
+@only_allow_groups(["User"])
 def create(request):
     if request.method == 'POST':
         form = PythonCreateForm(request.POST, request.FILES)
         print(form)
         if form.is_valid():
-            python = form.save()
-            python.save()
+            form.save()
             return redirect('index')
     else:
         form = PythonCreateForm()
