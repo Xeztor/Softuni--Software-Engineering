@@ -69,10 +69,11 @@ function solve() {
     };
 
     let outputArea = document.getElementsByTagName('textarea')[1];
-    outputArea.value += `Bought furniture: ${furnitureName.join(', ')}` + '\n'
-    outputArea.value += `Total price: ${totalPrice.toFixed(2)}` + '\n'
-    outputArea.value += `Average decoration factor: ${decFacSum / furnitureName.length}`
+    outputArea.value += `Bought furniture: ${furnitureName.join(', ')}` + '\n';
+    outputArea.value += `Total price: ${totalPrice.toFixed(2)}` + '\n';
+    outputArea.value += `Average decoration factor: ${decFacSum / furnitureName.length}`;
 
+    outputArea.value = text;
   };
 
 
