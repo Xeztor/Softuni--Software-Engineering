@@ -1,31 +1,20 @@
 function getArticleGenerator(articles) {
+    let currentArticleIndex = 0;
+    let articlesTexts = articles;
 
     function showNext() {
-        let articlesTexts = articles;
+        if (currentArticleIndex === articlesTexts.length) {
+            return;
+        }
 
-        let currentArticleIndex = 0;
-        changeArticle()
+        let nextArticleText = articlesTexts[currentArticleIndex];
+        currentArticleIndex += 1;
 
-        function changeArticle() {
-            if (currentArticleIndex === articlesTexts.length) {
-                return;
-            }
+        let articleElement = document.createElement('article')
+        articleElement.textContent = nextArticleText;
 
-            let currentArticle = document.querySelector('#content article');
+        document.getElementById('content').appendChild(articleElement);
 
-            if (currentArticle) {
-                document.getElementById('content').removeChild(currentArticle);
-            };
-
-            let nextArticleText = articlesTexts[currentArticleIndex];
-            currentArticleIndex++;
-
-            let articleElement = document.createElement('article')
-            articleElement.textContent = nextArticleText;
-
-            document.getElementById('content').appendChild(articleElement);
-
-        };
     };
 
     return showNext;
