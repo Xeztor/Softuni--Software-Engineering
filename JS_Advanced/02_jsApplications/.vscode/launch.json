@@ -11,11 +11,11 @@
                 "--timeout",
                 "999999",
                 "--colors",
-                "${workspaceFolder}/04_SPA/tryTests/tests"
+                "${workspaceFolder}/06_clientSideRendering/06.Book-Library/tests"
             ],
             "internalConsoleOptions": "openOnSessionStart",
             "name": "Mocha Tests",
-            "program": "${workspaceFolder}/04_SPA/tryTests/node_modules/mocha/bin/_mocha",
+            "program": "${workspaceFolder}/06_clientSideRendering/06.Book-Library/node_modules/mocha/bin/_mocha",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -29,7 +29,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\04_SPA\\tryTests\\tests\\e2e.test.js"
+            "program": "${workspaceFolder}\\05_architectureAndTesting\\03.SoftTerest\\tests\\e2e.test.js"
         }
     ]
 }
