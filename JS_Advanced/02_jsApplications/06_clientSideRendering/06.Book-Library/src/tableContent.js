@@ -1,8 +1,8 @@
-import { html, render, nothing } from '../node_modules/lit-html/lit-html.js';
+import { html, render } from '../node_modules/lit-html/lit-html.js';
+import { del, get } from './api.js';
+import { editForm, renderForm } from './formTemplate.js';
 
-document.getElementById('loadBooks').addEventListener('click', loadBooks);
-
-const url = 'http://localhost:3030/jsonstore/collections/books';
+const url = '/jsonstore/collections/books';
 
 const tableBodyRoot = document.getElementsByTagName('tbody')[0];
 
@@ -17,24 +17,21 @@ const tableRowTemplate = (book) => html`
 </tr>
 `;
 
-function onEdit(event) {
-    console.log('edit');
+async function onEdit(event) {
+    const id = event.target.parentElement.id;
+    const book = await get(url + `/${id}`);
+    renderForm(editForm(book));
 }
 
-function onDelete(event) {
-    console.log('delete');
+async function onDelete(event) {
+    const id = event.target.parentElement.id;
+    await del(url + `/${id}`);
+    loadBooks();
 }
 
-async function getBooks() {
-    const response = await fetch(url);
-    const books = await response.json();
-    return books;
-}
-
-async function loadBooks() {
-    let books = await getBooks();
+export async function loadBooks() {
+    let books = await get(url);
     books = Object.entries(books).map(([id, bookInfo]) => Object.assign(bookInfo, { _id: id }))
-    console.log(books);
     render(books.map(tableRowTemplate), tableBodyRoot);
 };
 
