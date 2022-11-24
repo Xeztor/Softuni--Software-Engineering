@@ -11,11 +11,11 @@
                 "--timeout",
                 "999999",
                 "--colors",
-                "${workspaceFolder}/06_clientSideRendering/06.Book-Library/tests"
+                "${workspaceFolder}/07_routing/01.Furniture/tests"
             ],
             "internalConsoleOptions": "openOnSessionStart",
             "name": "Mocha Tests",
-            "program": "${workspaceFolder}/06_clientSideRendering/06.Book-Library/node_modules/mocha/bin/_mocha",
+            "program": "${workspaceFolder}/07_routing/01.Furniture/node_modules/mocha/bin/_mocha",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
